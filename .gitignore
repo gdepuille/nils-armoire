@@ -1,8 +1,9 @@
 
 target/
+.gradle/
+build/
 
 .idea/
 *.iml
 
 springloaded-1.2.0.RELEASE.jar
-

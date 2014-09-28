@@ -1,0 +1,112 @@
+// Variable de configuration
+ext {
+    // Project dependencies
+    javaVersion = '1.8'
+
+    // Dependencies versions
+    lombokVersion = '1.14.8'
+    springBootVersion = '1.1.7.RELEASE'
+    apacheCommonsLangVersion = '3.3.2'
+    apacheCommonsIoVersion = '2.4'
+    imageScalrVersion = '4.2'
+
+}
+
+// Config de build
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath(
+                [group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.1.7.RELEASE']
+        )
+    }
+}
+
+// Plugin de build
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+// Plugin IDE
+apply plugin: 'idea'
+
+// Properties build
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+
+group = 'org.picotteland.sales'
+version = '1.0.0-SNAPSHOT'
+description = 'L\'armoire de Nils'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+configurations {
+    provided
+}
+
+sourceSets {
+    main {
+        compileClasspath += configurations.provided
+    }
+    test {
+        compileClasspath += configurations.provided
+        runtimeClasspath += configurations.provided
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Picotteland - Armoire de Nils', 'Implementation-Version': version
+    }
+}
+
+dependencies {
+    provided(
+            [group: 'org.projectlombok', name: 'lombok', version: lombokVersion]
+    )
+
+    compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootVersion],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBootVersion],
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: springBootVersion],
+
+            [group: 'org.apache.commons', name: 'commons-lang3', version: apacheCommonsLangVersion],
+            [group: 'commons-io', name: 'commons-io', version: apacheCommonsIoVersion],
+
+            [group: 'org.imgscalr', name: 'imgscalr-lib', version: imageScalrVersion]
+    )
+
+    testCompile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion]
+    )
+}
+
+idea {
+    project {
+        ext.jdkName = javaVersion
+        ext.languageLevel = javaVersion
+    }
+
+    module {
+        ext.downloadJavadoc = true
+        ext.downloadSource = true
+
+        scopes.PROVIDED.plus += configurations.provided
+    }
+}
+
+task copyDependencies(type: Copy) {
+    into "$buildDir/dependencies"
+    from configurations.runtime
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
