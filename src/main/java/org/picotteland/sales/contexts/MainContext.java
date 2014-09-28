@@ -27,7 +27,7 @@ public class MainContext {
     @Bean
     public File imagesDir() throws IOException {
         PathMatchingResourcePatternResolver rr = new PathMatchingResourcePatternResolver();
-        Resource resource = rr.getResource("file:./src/main/resources/images/");
+        Resource resource = rr.getResource("classpath:images/");
         if (resource.exists()) {
             return resource.getFile();
         } else {
