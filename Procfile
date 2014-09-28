@@ -1,1 +1,1 @@
-web:   java $JAVA_OPTS -Dserver.port=$PORT -cp target/classes:target/dependency/* org.picotteland.sales.App
+web:   java $JAVA_OPTS -Dserver.port=$PORT -cp build/classes/main:build/resources/main:build/dependencies/* org.picotteland.sales.App

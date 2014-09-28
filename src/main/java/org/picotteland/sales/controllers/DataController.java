@@ -60,7 +60,7 @@ public class DataController {
         while (imageFiles.hasNext()) {
             File image = imageFiles.next();
             String imageName = image.getName().replace(".jpg", "");
-            File jsonFile = FileUtils.getFile(imagesDir, imageName + ".json");
+            File jsonFile = FileUtils.getFile(imagesDir, image.getName() + ".json");
 
             String catName;
             JsonDesc desc;

@@ -98,7 +98,7 @@ idea {
         ext.downloadJavadoc = true
         ext.downloadSource = true
 
-        scopes.PROVIDED.plus += configurations.provided
+        scopes.PROVIDED.plus += [ configurations.provided ]
     }
 }
 
