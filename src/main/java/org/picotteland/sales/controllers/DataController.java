@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
+import org.apache.commons.lang3.StringUtils;
 import org.picotteland.sales.dto.Categorie;
 import org.picotteland.sales.dto.JsonDesc;
 import org.picotteland.sales.dto.PhotoInfo;
@@ -62,7 +63,7 @@ public class DataController {
             String imageName = image.getName().replace(".jpg", "");
             File jsonFile = FileUtils.getFile(imagesDir, image.getName() + ".json");
 
-            String catName;
+            String catName = null;
             JsonDesc desc;
             try {
                 desc = jsonMapper.readValue(jsonFile, JsonDesc.class);
@@ -70,9 +71,12 @@ public class DataController {
             } catch (IOException e) {
                 log.warn("Impossible de lire le fichier : " + e.toString());
                 log.info("Application du paramètre par défaut.");
-                catName = AUTRE_CATEGORIE;
                 desc = new JsonDesc();
                 desc.setCategorie(AUTRE_CATEGORIE);
+            }
+
+            if (StringUtils.isBlank(catName)) {
+                catName = AUTRE_CATEGORIE;
             }
 
             Categorie cat;

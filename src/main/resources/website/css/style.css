@@ -10,7 +10,6 @@ body {
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
-
 /* Bouton de navigation dans les images */
 .arrow {
     cursor: pointer;
@@ -19,20 +18,20 @@ body {
     margin-top: -35px;
     outline: medium none;
     position: absolute;
-    top: 50%;
+    top: 145px;
     width: 64px;
     z-index: 5;
 }
 .arrow.prev {
     background-image: url("/img/prev.png");
-    left: 20px;
+    left: 60px;
     opacity: 0.2;
     transition: all 0.2s linear 0s;
 }
 .arrow.next {
     background-image: url("/img/next.png");
     opacity: 0.2;
-    right: 20px;
+    right: 60px;
     transition: all 0.2s linear 0s;
 }
 .arrow.prev:hover{
@@ -57,6 +56,10 @@ ul.thumbnav > li img {
     -o-transition: box-shadow 0.3s ease;
     -ms-transition: box-shadow 0.3s ease;
     transition: box-shadow 0.3s ease;
+}
+
+ul.thumbnav > li.active img {
+    border: 5px solid #000;
 }
 
 ul.thumbnav > li img:hover {

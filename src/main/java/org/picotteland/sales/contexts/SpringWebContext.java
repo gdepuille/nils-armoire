@@ -12,6 +12,6 @@ public class SpringWebContext extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classpath:website/");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:website/").setCachePeriod(0);
     }
 }

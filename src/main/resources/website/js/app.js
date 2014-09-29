@@ -11,6 +11,7 @@ angular.module('nilsArmoireApp', ['ngAnimate', 'ngTouch'])
         $scope.categories = {};
 
         // Categorie selectionne
+        $scope.catName = "";
         $scope.currentCategorie = {};
 
         // initial image index
@@ -19,6 +20,13 @@ angular.module('nilsArmoireApp', ['ngAnimate', 'ngTouch'])
         // if a current image is the same as requested image
         $scope.isActive = function (index) {
             return $scope._Index === index;
+        };
+
+        // Select categorie
+        $scope.selectCategorie = function (key) {
+            $scope.catName = key;
+            $scope.currentCategorie = $scope.categories[key];
+            $scope.showPhoto(0);
         };
 
         // show prev image
@@ -41,7 +49,7 @@ angular.module('nilsArmoireApp', ['ngAnimate', 'ngTouch'])
             success(function(data, status, headers, config) {
                 $scope.categories = data;
                 for (var key in data) {
-                    $scope.currentCategorie = data[key];
+                    $scope.selectCategorie(key);
                     break;
                 }
             }).

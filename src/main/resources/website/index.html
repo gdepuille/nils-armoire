@@ -39,13 +39,10 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégorie <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li ng-repeat="(key, value) in categories"><a href="#" ng-click="selectCategorie(key)">{{key}}</a></li>
+                                <li ng-repeat="(key, value) in categories" ng-class="{'active': catName === key}"><a href="#" ng-click="selectCategorie(key)">{{key}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,6 +54,9 @@
 
             <div class="row">
                 <div class="col-md-4">
+                    <div class="row">
+                        <h3>{{catName}}</h3>
+                    </div>
                     <!-- thumbnail list -->
                     <!-- extra navigation controls -->
                     <ul class="thumbnav">
