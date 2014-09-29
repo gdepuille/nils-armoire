@@ -107,6 +107,8 @@ task copyDependencies(type: Copy) {
     from configurations.runtime
 }
 
+build.dependsOn copyDependencies
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.1'
 }
