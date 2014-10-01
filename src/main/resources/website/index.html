@@ -40,7 +40,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catégorie <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tailles <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li ng-repeat="(key, value) in categories" ng-class="{'active': catName === key}"><a href="#" ng-click="selectCategorie(key)">{{key}}</a></li>
                             </ul>
@@ -53,7 +53,7 @@
         <div class="container-fluid">
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-12 col-sm-12">
                     <div class="row">
                         <h3>{{catName}}</h3>
                     </div>
@@ -66,32 +66,29 @@
                     </ul>
                 </div>
 
-                <div class="col-md-8">
-                    <div ng-repeat="photo in currentCategorie.photos" ng-show="isActive($index)">
-                        <div class="row">
-                            <h3>{{photo.desc.title}}</h3>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>Référence : {{photo.ref}}</p>
-                            </div>
-                            <div class="col-md-6">
-                                <p>Prix : {{photo.desc.prix}} €</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <p>{{photo.desc.description}}</p>
-                        </div>
-                        <div class="row">
-                            <img title="{{photo.desc.title}}"
-                                 ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
-                                 ng-src="{{photo.url}}"/>
-                        </div>
+                <div class="col-md-8 col-xs-12 col-sm-12">
+                    <div class="col-md-12">
+                        <h3>{{currentCategorie.photos[idx].desc.title}}</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Référence : {{currentCategorie.photos[idx].ref}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p ng-if="currentCategorie.photos[idx].desc.prix > 0">Prix : {{currentCategorie.photos[idx].desc.prix | currency: '€'}}</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p>{{currentCategorie.photos[idx].desc.description}}</p>
+                    </div>
+                    <div class="col-md-12 imgview">
+                        <img title="{{currentCategorie.photos[idx].desc.title}}"
+                             ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
+                             ng-src="{{currentCategorie.photos[idx].url}}"/>
+
+                        <!-- prev / next controls -->
+                        <a class="arrow prev hidden-xs hidden-sm" href="#" ng-click="showPrev()"></a>
+                        <a class="arrow next hidden-xs hidden-sm" href="#" ng-click="showNext()"></a>
                     </div>
 
-                    <!-- prev / next controls -->
-                    <a class="arrow prev" href="#" ng-click="showPrev()"></a>
-                    <a class="arrow next" href="#" ng-click="showNext()"></a>
                 </div>
             </div>
         </div>

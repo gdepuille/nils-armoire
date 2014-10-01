@@ -16,7 +16,7 @@ public class JsonDesc {
 
     private String title;
 
-    private Long prix;
+    private Double prix;
 
     private String description;
 }
