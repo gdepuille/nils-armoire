@@ -108,6 +108,7 @@ task copyDependencies(type: Copy) {
 }
 
 build.dependsOn copyDependencies
+build.mustRunAfter clean
 
 // Heroku recherche cette tache
 task stage(dependsOn: ['clean', 'build'])
