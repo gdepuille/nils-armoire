@@ -73,7 +73,6 @@ dependencies {
 
     compile(
             [group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion],
-            [group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootVersion],
             [group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBootVersion],
             [group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: springBootVersion],
 

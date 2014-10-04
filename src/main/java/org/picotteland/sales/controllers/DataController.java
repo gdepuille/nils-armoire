@@ -11,7 +11,6 @@ import org.picotteland.sales.dto.Categorie;
 import org.picotteland.sales.dto.JsonDesc;
 import org.picotteland.sales.dto.PhotoInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +26,6 @@ import java.util.Map;
  * Created by gdepuille on 27/09/14.
  */
 @Slf4j
-@Secured("ROLE_USER")
 @RestController
 public class DataController {
 
