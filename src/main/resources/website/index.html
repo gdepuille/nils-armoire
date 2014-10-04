@@ -20,6 +20,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-animate.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-touch.min.js"></script>
+        <script src="js/angular-mailto.js"></script>
         <script src="js/app.js"></script>
     </head>
 
@@ -59,7 +60,7 @@
                     </div>
                     <!-- thumbnail list -->
                     <!-- extra navigation controls -->
-                    <ul class="thumbnav">
+                    <ul class="thumbnav hidden-xs">
                         <li ng-repeat="photo in currentCategorie.photos" ng-class="{'active':isActive($index)}">
                             <a href="#"><img src="{{photo.thumbUrl}}" title="{{photo.desc.title}}" ng-click="showPhoto($index);"/></a>
                         </li>
@@ -68,18 +69,20 @@
 
                 <div class="col-md-8 col-xs-12 col-sm-12">
                     <div class="col-md-12">
-                        <h3>{{currentCategorie.photos[idx].desc.title}}</h3>
+                        <h3>{{currentCategorie.photos[idx].desc.title}} <a href="#" class="btn btn-primary btn-primary" ng-click="reserve()"><span class="glyphicon glyphicon-shopping-cart"></span> R&eacute;server</a></h3>
                     </div>
                     <div class="col-md-6">
-                        <p>Référence : {{currentCategorie.photos[idx].ref}}</p>
+                        <p>R&eacute;f&eacute;rence : {{currentCategorie.photos[idx].ref}}</p>
                     </div>
-                    <div class="col-md-6">
-                        <p ng-if="currentCategorie.photos[idx].desc.prix > 0">Prix : {{currentCategorie.photos[idx].desc.prix | currency: '€'}}</p>
+                    <div class="col-md-6" ng-if="currentCategorie.photos[idx].desc.prix > 0">
+                        <p>Prix : {{currentCategorie.photos[idx].desc.prix | currency: '€'}}</p>
                     </div>
-                    <div class="col-md-12">
-                        <p>{{currentCategorie.photos[idx].desc.description}}</p>
+                    <div class="col-md-12" ng-if="currentCategorie.photos[idx].desc.description">
+                        <p>Informations compl&eacute;mentaires : {{currentCategorie.photos[idx].desc.description}}</p>
                     </div>
                     <div class="col-md-12 imgview">
+                        <span class="label label-warning visible-xs"><span class="glyphicon glyphicon-warning-sign"></span> D&eacute;placer les photos avec les doigts</span>
+                        <br class="visible-xs" />
                         <img title="{{currentCategorie.photos[idx].desc.title}}"
                              ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
                              ng-src="{{currentCategorie.photos[idx].url}}"/>
@@ -88,7 +91,6 @@
                         <a class="arrow prev hidden-xs hidden-sm" href="#" ng-click="showPrev()"></a>
                         <a class="arrow next hidden-xs hidden-sm" href="#" ng-click="showNext()"></a>
                     </div>
-
                 </div>
             </div>
         </div>
