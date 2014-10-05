@@ -1,7 +1,7 @@
 // Variable de configuration
 ext {
     // Project dependencies
-    javaVersion = '1.7'
+    javaVersion = '1.8'
 
     // Dependencies versions
     lombokVersion = '1.14.8'
