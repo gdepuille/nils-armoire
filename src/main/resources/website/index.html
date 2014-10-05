@@ -65,19 +65,17 @@
                     <a class="arrow next hidden-xs hidden-sm" href="#" ng-click="showNext()"></a>
 
                     <div class="col-md-12">
-                        <h3>{{currentCategorie.photos[idx].desc.title}} <a href="#" class="btn btn-primary btn-primary" ng-click="reserve()"><span class="glyphicon glyphicon-shopping-cart"></span> R&eacute;server</a></h3>
+                        <h3>{{currentCategorie.photos[idx].desc.title}} <a href="#" class="btn btn-primary btn-primary" ng-click="reserve()"><span class="glyphicon glyphicon-shopping-cart"></span> Réserver</a></h3>
                     </div>
                     <div class="col-md-6">
-                        <p>R&eacute;f&eacute;rence : {{currentCategorie.photos[idx].ref}}</p>
+                        <p ng-if="currentCategorie.photos[idx].desc.description" ng-bind-html="currentCategorie.photos[idx].desc.description" />
                     </div>
                     <div class="col-md-6" ng-if="currentCategorie.photos[idx].desc.prix > 0">
-                        <p>Prix : {{currentCategorie.photos[idx].desc.prix | currency: '&euro;'}}</p>
-                    </div>
-                    <div class="col-md-12" ng-if="currentCategorie.photos[idx].desc.description">
-                        <p>Informations compl&eacute;mentaires : <span ng-bind-html="currentCategorie.photos[idx].desc.description"></span></p>
+                        <p>Référence : {{currentCategorie.photos[idx].ref}}</p>
+                        <p>Prix : {{currentCategorie.photos[idx].desc.prix | currency: '€'}}</p>
                     </div>
                     <div class="col-md-12 imgview">
-                        <span class="label label-warning visible-xs"><span class="glyphicon glyphicon-warning-sign"></span> D&eacute;placer les photos avec les doigts</span>
+                        <span class="label label-warning visible-xs"><span class="glyphicon glyphicon-warning-sign"></span> Déplacer les photos avec les doigts</span>
                         <br class="visible-xs" />
                         <img title="{{currentCategorie.photos[idx].desc.title}}"
                              ng-swipe-right="showPrev()" ng-swipe-left="showNext()"
