@@ -18,7 +18,7 @@ body {
     margin-top: -35px;
     outline: medium none;
     position: absolute;
-    top: -45px;
+    top: 35px;
     width: 64px;
     z-index: 5;
 }
