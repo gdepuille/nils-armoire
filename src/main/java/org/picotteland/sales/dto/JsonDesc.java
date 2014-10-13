@@ -19,4 +19,6 @@ public class JsonDesc {
     private Double prix;
 
     private String description;
+
+    private boolean reserve = false;
 }

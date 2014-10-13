@@ -2,5 +2,6 @@
     "categorie" : "1 Mois",
     "title": "Body",
     "prix": 1,
-    "description": "Réservé --------- <br/>Body en parfait état blanc avec motif animaux en coton bio<br/>Marque : C&A"
+    "description": "Body en parfait état blanc avec motif animaux en coton bio<br/>Marque : C&A",
+    "reserve": true
 }

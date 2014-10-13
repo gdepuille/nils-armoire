@@ -2,5 +2,6 @@
     "categorie" : "6 Mois",
     "title": "Pyjama coton",
     "prix": 2,
-    "description": "Réservé ------------ <br/>Pyjama en coton noir.<br/>Marque : Interdit de me gronder"
+    "description": "Pyjama en coton noir.<br/>Marque : Interdit de me gronder",
+    "reserve": true
 }

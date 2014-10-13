@@ -2,5 +2,6 @@
     "categorie" : "Naissance",
     "title": "Pyjama",
     "prix": 1.5,
-    "description": "Réservé --------- <br/>Pyjama velours blanc. Etat impeccable. <br/>Marque : Bébé rêve"
+    "description": "Pyjama velours blanc. Etat impeccable. <br/>Marque : Bébé rêve",
+    "reserve": true
 }

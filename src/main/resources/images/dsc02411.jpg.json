@@ -2,5 +2,6 @@
     "categorie" : "6 Mois",
     "title": "T-Shirt",
     "prix": 1,
-    "description": "Réservé"
+    "description": "",
+    "reserve": true
 }

@@ -2,5 +2,6 @@
     "categorie" : "6 Mois",
     "title": "Jean + ceinture",
     "prix": 2,
-    "description": "Réservé ---------------- <br/>Marque : C&A"
+    "description": "Marque : C&A",
+    "reserve": true
 }

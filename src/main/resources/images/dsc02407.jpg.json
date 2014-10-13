@@ -2,5 +2,6 @@
     "categorie" : "6 Mois",
     "title": "T-Shirt",
     "prix": 2,
-    "description": "Réservé --------------------<br/>Colori : bleu pétrole. En parfait état.<br/>Marque : Tape à l'oeil"
+    "description": "Colori : bleu pétrole. En parfait état.<br/>Marque : Tape à l'oeil",
+    "reserve": true
 }

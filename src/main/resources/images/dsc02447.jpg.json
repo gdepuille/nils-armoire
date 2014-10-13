@@ -2,5 +2,6 @@
     "categorie" : "Naissance",
     "title": "Bonnet coton",
     "prix": 0.5,
-    "description": "RESERVE --------------------------<br/>Body coton rayé gris clair et blanc. Idéal pour les 1ers jours. <br/>Marque : Kiabi"
+    "description": "Bonnet coton rayé gris clair et blanc. Idéal pour les 1ers jours. <br/>Marque : Kiabi",
+    "reserve": true
 }

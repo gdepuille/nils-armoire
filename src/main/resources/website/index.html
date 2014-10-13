@@ -65,7 +65,7 @@
                     <a class="arrow next hidden-xs hidden-sm" href="#" ng-click="showNext()"></a>
 
                     <div class="col-md-12">
-                        <h3>{{currentCategorie.photos[idx].desc.title}} <a href="#" class="btn btn-primary btn-primary" ng-click="reserve()"><span class="glyphicon glyphicon-shopping-cart"></span> Réserver</a></h3>
+                        <h3>{{currentCategorie.photos[idx].desc.title}} <a href="#" class="btn btn-primary btn-primary" ng-if="currentCategorie.photos[idx].desc.reserve === false" ng-click="reserve()"><span class="glyphicon glyphicon-shopping-cart"></span> Réserver</a></h3>
                     </div>
                     <div class="col-md-6">
                         <p ng-if="currentCategorie.photos[idx].desc.description" ng-bind-html="currentCategorie.photos[idx].desc.description" />

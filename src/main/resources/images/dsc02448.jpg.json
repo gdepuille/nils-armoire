@@ -2,5 +2,6 @@
     "categorie" : "1 Mois",
     "title": "Body manches longues",
     "prix": 1,
-    "description": "Réservé ----------- <br/>Marque : Gemo"
+    "description": "Marque : Gemo",
+    "reserve": true
 }
